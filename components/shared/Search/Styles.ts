@@ -1,4 +1,4 @@
-import SearchIcon from "@/components/Svg/SearchIcon";
+import SearchIcon from "@/components/shared/Svg/SearchIcon";
 import styled from "styled-components";
 
 export const SearchContainer = styled.div`
