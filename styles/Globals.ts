@@ -17,10 +17,23 @@ export const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
   justify-items: center;
   max-width: 1200px;
   padding: 1rem 2rem;
   margin: 13rem 4rem auto;
+`
+
+export const ContactContainer = styled.div`
+  width: 100%;
+`
+
+export const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 2rem;
+  row-gap: 2rem;
+  width: 100%;
 `
