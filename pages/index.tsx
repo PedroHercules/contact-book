@@ -1,4 +1,5 @@
-import { Head } from '@/components/shared/Head'
+import { Head } from '@/components/shared/Head/Head'
+import Header from '@/components/shared/Header/Header'
 import { GlobalStyle } from '@/styles/Globals'
 import { Paragraph, Title } from '@/styles/Texts'
 
@@ -7,10 +8,7 @@ export default function Home() {
     <>
       <Head />
       <main>
-        <Title>Hello World!</Title>
-        <Paragraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </Paragraph>
+        <Header />
       </main>
     </>
   )
