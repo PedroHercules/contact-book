@@ -27,7 +27,7 @@ export const Icon = styled(SearchIcon)`
   height: 30px;
   position: absolute;
   right: 10px;
-  top: 20%;
+  top: 24%;
 
   &:hover {
     cursor: pointer;
