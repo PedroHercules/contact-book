@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -12,4 +12,15 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 65%;
   }
+`
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  max-width: 1200px;
+  padding: 1rem 2rem;
+  margin: 8rem auto;
 `
