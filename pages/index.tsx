@@ -4,40 +4,16 @@ import Header from '@/components/shared/Header/Header'
 import Search from '@/components/shared/Search/Search'
 import { ContactContainer, Container, GlobalStyle, GridContainer } from '@/styles/Globals'
 import { Title } from '@/styles/Texts'
+import { GetServerSideProps } from 'next'
+import FolderService from '@/services/FoldersService'
+import { FolderProps } from '@/types/folder'
 
-const folders = [
-  {
-    title: 'Família',
-    numberContacts: 10
-  },
-  {
-    title: 'Trabalho',
-    numberContacts: 5
-  },
-  {
-    title: 'Amigos',
-    numberContacts: 15
-  },
-  {
-    title: 'Escola',
-    numberContacts: 20
-  },
-  {
-    title: 'Faculdade',
-    numberContacts: 30
-  },
-  {
-    title: 'Contas',
-    numberContacts: 5
-  },
-  {
-    title: 'Outros',
-    numberContacts: 50
-  }
-]
+interface HomeProps {
+  folders: FolderProps[]
+}
 
 
-export default function Home() {
+export default function Home({ folders }: HomeProps) {
   return (
     <>
       <Head />
@@ -65,4 +41,14 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const folders = await FolderService.getFolders()
+
+  return {
+    props: {
+      folders
+    }
+  }
 }
