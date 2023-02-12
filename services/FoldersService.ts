@@ -5,4 +5,10 @@ export default class FolderService {
     const folders = await FolderData.getFolderData();
     return folders;
   }
+
+  static async getFolderByTitle(title: string) {
+    const folders = await FolderData.getFolderData();
+    const folder = folders.filter((folder) => folder.title.toLowerCase().includes(title.toLowerCase()));
+    return folder;
+  }
 }

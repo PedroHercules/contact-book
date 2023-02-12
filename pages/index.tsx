@@ -7,6 +7,7 @@ import { Title } from '@/styles/Texts'
 import { GetServerSideProps } from 'next'
 import FolderService from '@/services/FoldersService'
 import { FolderProps } from '@/types/folder'
+import { useEffect, useState } from 'react'
 
 interface HomeProps {
   folders: FolderProps[]
@@ -14,20 +15,38 @@ interface HomeProps {
 
 
 export default function Home({ folders }: HomeProps) {
+  const [foldersList, setFoldersList] = useState<FolderProps[]>(folders)
+  const [search, setSearch] = useState<string>('')
+
+  useEffect(() => {
+    async function searchFolders() {
+      if (search.length > 0) {
+        const filteredFolders = await FolderService.getFolderByTitle(search)
+        setFoldersList(filteredFolders)
+      } else {
+        setFoldersList(folders)
+      }
+    }
+    searchFolders()
+  }, [search, folders])
+
   return (
     <>
       <Head />
       <main>
         <Header />
         <Container>
-          <Search />
+          <Search 
+            search={search}
+            setSearch={setSearch}
+          />
           <ContactContainer>
             <Title>
               Pastas
             </Title>
             <GridContainer>
               {
-                folders.map((folder, index) => (
+                foldersList.map((folder, index) => (
                   <Folder 
                     key={index}
                     title={folder.title}

@@ -32,8 +32,8 @@ export const ContactContainer = styled.div`
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  column-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+  column-gap: 4rem;
   row-gap: 2rem;
   width: 100%;
 `
