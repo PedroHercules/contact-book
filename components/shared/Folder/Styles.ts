@@ -9,4 +9,10 @@ export const FolderContainer = styled.div`
   background-color: #202024;
   border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #2f2f34;
+    cursor: pointer;
+  }
 `
