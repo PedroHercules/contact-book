@@ -8,6 +8,7 @@ import { GetServerSideProps } from 'next'
 import FolderService from '@/services/FoldersService'
 import { FolderProps } from '@/types/folder'
 import { useEffect, useState } from 'react'
+import AddFolder from '@/components/Modal/AddFolder/AddFolder'
 
 interface HomeProps {
   folders: FolderProps[]
@@ -56,6 +57,8 @@ export default function Home({ folders }: HomeProps) {
               }
             </GridContainer>
           </ContactContainer>
+
+          <AddFolder />
         </Container>
       </main>
     </>

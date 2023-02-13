@@ -10,4 +10,5 @@ export const HeaderContainer = styled.header`
   color: #E0E0E5;
   width: 100%;
   height: 7rem;
+  z-index: 10;
 `

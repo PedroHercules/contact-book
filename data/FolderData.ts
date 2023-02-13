@@ -26,7 +26,39 @@ const folders = [
   {
     title: 'Outros',
     numberContacts: 50
-  }
+  },
+  {
+    title: 'Contas',
+    numberContacts: 5
+  },
+  {
+    title: 'Outros',
+    numberContacts: 50
+  },
+  {
+    title: 'Contas',
+    numberContacts: 5
+  },
+  {
+    title: 'Outros',
+    numberContacts: 50
+  },
+  {
+    title: 'Contas',
+    numberContacts: 5
+  },
+  {
+    title: 'Outros',
+    numberContacts: 50
+  },
+  {
+    title: 'Contas',
+    numberContacts: 5
+  },
+  {
+    title: 'Outros',
+    numberContacts: 50
+  },
 ]
 
 
