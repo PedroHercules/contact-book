@@ -63,6 +63,9 @@ const folders = [
 
 
 export default class FolderData {
+    public static async addFolder(folder: any) {
+      folders.push(folder);
+    }
     public static async getFolderData() {
         return folders;
     }

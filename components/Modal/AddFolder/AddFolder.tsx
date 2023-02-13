@@ -5,10 +5,16 @@ import AddFolderIcon from "@/components/shared/Svg/AddFolderIcon";
 import TextInput from '@/components/shared/Inputs/TextInput/TextInput';
 import Button from '@/components/shared/Button/Button';
 import { ButtonContainer, ContentContainer } from './Styles';
+import FolderService from '@/services/FoldersService';
 
 export default function AddFolder() {
   const [opened, setOpened] = useState(false);
   const [folderName, setFolderName] = useState('');
+
+  async function addFolder() {
+    await FolderService.addFolder(folderName);
+    setOpened(false);
+  }
 
   return (
     <>
@@ -32,7 +38,7 @@ export default function AddFolder() {
             />
             <Button 
               text='Adicionar'
-              onClick={() => {}}
+              onClick={() => addFolder()}
               variant='primary'
             />
           </ButtonContainer>
