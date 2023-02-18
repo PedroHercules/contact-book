@@ -2,13 +2,7 @@ import Folder from '@/components/shared/Folder/Folder';
 import { Head } from '@/components/shared/Head/Head';
 import Header from '@/components/shared/Header/Header';
 import Search from '@/components/shared/Search/Search';
-import {
-  ContactContainer,
-  Container,
-  GlobalStyle,
-  GridContainer,
-  LinkStyled
-} from '@/styles/Globals';
+import { ContactContainer, Container, GridContainer } from '@/styles/Globals';
 import { Title } from '@/styles/Texts';
 import { GetServerSideProps } from 'next';
 import FolderService from '@/services/FoldersService';
