@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 65%;
   }
-`
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -24,11 +24,11 @@ export const Container = styled.div`
   max-width: 1200px;
   padding: 1rem 2rem;
   margin: 13rem 4rem auto;
-`
+`;
 
 export const ContactContainer = styled.div`
   width: 100%;
-`
+`;
 
 export const GridContainer = styled.div`
   display: grid;
@@ -36,4 +36,4 @@ export const GridContainer = styled.div`
   column-gap: 4rem;
   row-gap: 2rem;
   width: 100%;
-`
+`;
