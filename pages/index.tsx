@@ -50,7 +50,6 @@ export default function Home({ folders }: HomeProps) {
                       folderTitle: folder.title
                     }
                   }}
-                  as={`/${folder.title}`}
                   key={folder.id}
                   style={{ textDecoration: 'none', color: 'inherit' }}
                 >
