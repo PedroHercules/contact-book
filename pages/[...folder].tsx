@@ -1,3 +1,4 @@
+import AddContact from '@/components/Modal/AddContact/AddContact';
 import AddButton from '@/components/shared/AddButton/AddButton';
 import ContactCard from '@/components/shared/ContactCard/ContactCard';
 import { Head } from '@/components/shared/Head/Head';
@@ -43,7 +44,7 @@ export default function Folder({ contacts }: FolderProps) {
               )}
             </GridContainer>
           </ContactContainer>
-          <AddButton icon={<AddContactIcon width={50} />} />
+          <AddContact />
         </Container>
       </main>
     </>
