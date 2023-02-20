@@ -1,5 +1,5 @@
 export interface FolderProps {
-  id: string
-  title: string
-  numberContacts: number
+  id: string;
+  name: string;
+  numberContacts: number;
 }

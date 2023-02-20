@@ -44,16 +44,16 @@ export default function Home({ folders }: HomeProps) {
               {foldersList.map((folder, index) => (
                 <Link
                   href={{
-                    pathname: `${folder.title}`,
+                    pathname: `${folder.name}`,
                     query: {
                       folderId: folder.id,
-                      folderTitle: folder.title
+                      folderTitle: folder.name
                     }
                   }}
                   key={folder.id}
                   style={{ textDecoration: 'none', color: 'inherit' }}
                 >
-                  <Folder title={folder.title} numberContacts={folder.numberContacts} />
+                  <Folder title={folder.name} numberContacts={folder.numberContacts} />
                 </Link>
               ))}
             </GridContainer>

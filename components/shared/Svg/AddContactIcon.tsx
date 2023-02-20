@@ -1,12 +1,6 @@
-export default function AddContactIcon(
-  props: React.SVGProps<SVGSVGElement>
-) {
+export default function AddContactIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-      viewBox="0 0 256 256"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" {...props} viewBox="0 0 256 256">
       <rect fill="none"></rect>
       <line
         x1="200"
@@ -36,8 +30,8 @@ export default function AddContactIcon(
         r="60"
         fill="none"
         stroke={props.stroke || '#E0E0E5'}
-        stroke-miterlimit="10"
-        stroke-width="16"
+        strokeMiterlimit="10"
+        strokeWidth="16"
       ></circle>
       <path
         d="M22.2,200a112,112,0,0,1,171.6,0"

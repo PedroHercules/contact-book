@@ -1,10 +1,9 @@
+import { useEffect } from 'react';
 import AddContact from '@/components/Modal/AddContact/AddContact';
-import AddButton from '@/components/shared/AddButton/AddButton';
 import ContactCard from '@/components/shared/ContactCard/ContactCard';
 import { Head } from '@/components/shared/Head/Head';
 import Header from '@/components/shared/Header/Header';
 import Search from '@/components/shared/Search/Search';
-import AddContactIcon from '@/components/shared/Svg/AddContactIcon';
 import ContactsService from '@/services/ContactsService';
 import { ContactContainer, Container, GridContainer } from '@/styles/Globals';
 import { Paragraph, Title } from '@/styles/Texts';
@@ -14,11 +13,14 @@ import { useRouter } from 'next/router';
 
 interface FolderProps {
   contacts: ContactProps[];
+  folderId: string;
 }
 
-export default function Folder({ contacts }: FolderProps) {
+export default function Folder({ contacts, folderId }: FolderProps) {
   const router = useRouter();
-  const { folderId, folderTitle } = router.query;
+  const { folderTitle } = router.query;
+
+  useEffect(() => {}, [contacts]);
   return (
     <>
       <Head />
@@ -44,7 +46,7 @@ export default function Folder({ contacts }: FolderProps) {
               )}
             </GridContainer>
           </ContactContainer>
-          <AddContact />
+          <AddContact folderId={folderId} />
         </Container>
       </main>
     </>
@@ -56,7 +58,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const contacts = await ContactsService.getContacts(folderId);
   return {
     props: {
-      contacts
+      contacts,
+      folderId
     }
   };
 };

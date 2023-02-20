@@ -6,14 +6,25 @@ import { InputStyled } from '@/styles/modal';
 import Button from '@/components/shared/Button/Button';
 import AddContactIcon from '@/components/shared/Svg/AddContactIcon';
 import { useForm } from 'react-hook-form';
+import ContactsService from '@/services/ContactsService';
+import Router from 'next/router';
 
-export default function AddContact() {
+interface AddContactProps {
+  folderId: string;
+}
+
+export default function AddContact({ folderId }: AddContactProps) {
   const [opened, setOpened] = useState(false);
   const { register, handleSubmit } = useForm();
 
   async function onSubmit(data: any) {
-    console.log(data);
+    const contactData = {
+      ...data,
+      folderId
+    };
+    await ContactsService.addContact(contactData);
     setOpened(false);
+    Router.reload();
   }
   return (
     <>

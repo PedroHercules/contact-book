@@ -3,4 +3,5 @@ export interface ContactProps {
   name: string;
   email: string;
   phone: string;
+  folderId: string;
 }
